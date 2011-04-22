@@ -1,3 +1,7 @@
+#
+# Build Script for ZKGrails
+#
+
 ZK_VER=5.0.7-FL-2011-04-20
 ZKGRAILS_VER=1.1-M1
 
