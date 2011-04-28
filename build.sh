@@ -16,6 +16,7 @@ grails clean && grails package-plugin
 cd ..
 cd zkgrails-ee
 ./copylib ../zkgrails-aspect/injar/zkee-bin-eval-$ZK_VER
+grails install-plugin --non-interactive ../zkgrails/grails-zk-$ZKGRAILS_VER.zip
 grails clean && grails package-plugin
 
 cd ..
