@@ -2,8 +2,8 @@
 # Build Script for ZKGrails
 #
 
-ZK_VER=$1
-ZKGRAILS_VER=$2
+ZK_VER=`awk -Fzk= '{ print $2 }' build.properties`
+ZKGRAILS_VER=`awk -Fzkgrails= '{ print $2 }' build.properties`
 
 cd zkgrails-aspect
 ./build.sh $ZK_VER
