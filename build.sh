@@ -13,19 +13,18 @@ cd zkgrails
 ./copylib ../zkgrails-aspect/injar/zkee-bin-eval-$ZK_VER
 grails clean && grails package-plugin
 
-cd ..
-cd zkgrails-ee
-./copylib ../zkgrails-aspect/injar/zkee-bin-eval-$ZK_VER
-grails install-plugin --non-interactive ../zkgrails/grails-zk-$ZKGRAILS_VER.zip
-grails clean && grails package-plugin
 
-cd ..
-cd zkgrails-hibernate
-grails install-plugin --non-interactive ../zkgrails/grails-zk-$ZKGRAILS_VER.zip
-grails clean && grails package-plugin
+for name in ee hibernate redis codemirror
+do
+    cd ..
+    cd zkgrails-${name}
 
-cd ..
-cd zkgrails-codemirror
-grails install-plugin --non-interactive ../zkgrails/grails-zk-$ZKGRAILS_VER.zip
-grails clean && grails package-plugin
+    if [ "${name}" == "ee" ]
+    then
+        ./copylib ../zkgrails-aspect/injar/zkee-bin-eval-$ZK_VER
+    fi
+
+    grails install-plugin --non-interactive ../zkgrails/grails-zk-$ZKGRAILS_VER.zip
+    grails clean && grails package-plugin
+done
 
