@@ -20,7 +20,7 @@ do
     cd zkgrails-${name}
 
     if [ "${name}" == "ee" ]
-	then
+    then
         ./copylib ../zkgrails-aspect/injar/zkee-bin-eval-$ZK_VER
     fi
 
