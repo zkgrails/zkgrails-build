@@ -14,7 +14,7 @@ cd zkgrails
 grails clean && grails package-plugin
 
 
-for name in ee hibernate redis codemirror
+for name in ee hibernate redis mongodb codemirror
 do
     cd ..
     cd zkgrails-${name}
